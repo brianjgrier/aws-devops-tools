@@ -1,0 +1,4 @@
+.terraform
+modules/*
+*tfstate*
+region.tf

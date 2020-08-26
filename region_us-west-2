@@ -1,0 +1,21 @@
+//
+// This module will call other modules to acutally do the work
+//
+// The first thing to do is make sure that teh state file is stored in an S3 bucket
+//
+
+variable "AWS_Region" {default = "us-west-2"}
+variable "Usage" {default = "dr"}
+
+terraform {
+  backend "s3" {
+    # Replace this with your bucket name!
+    bucket         = "cisco-cx-tools-us-west-2-terraform-up-and-running-state"
+    key            = "global/s3/terraform.tfstate"
+    region         = "us-west-2"
+    # Replace this with your DynamoDB table name!
+    dynamodb_table = "cisco-cx-tools-us-west-2-terraform-up-and-running-locks"
+    encrypt        = true
+  }
+}
+
