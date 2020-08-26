@@ -39,8 +39,8 @@ data "aws_eip" "by_allocation_id" {
 // Now create the CircleCI instance
 //
 module "create_circleci" {
-//  source          = "git::ssh://git@github.com/brianjgrier/circleci-module.git"
- source = "./modules/circleci-module"
+//  source          = "git::ssh://git@github.com/brianjgrier/circleci_deploy.git"
+ source = "./modules/circleci_deploy"
 #####################################
 # 1. Required Cloud Configuration
 #####################################
